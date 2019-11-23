@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Telescope } from 'telescopejs';
 import { TodoState, Todo } from '../todo.state';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'todos-list',
@@ -9,11 +10,11 @@ import { TodoState, Todo } from '../todo.state';
 })
 export class TodosListComponent {
 
-  @Input() telescope: Telescope<TodoState>;
   @Input() list: Array<Todo>;
+  @Input() serivce: TodoService;
   newTodo: string = '';
 
-  add(todo: string) {
-    
+  add() {
+    this.serivce.add(this.newTodo);
   }
 }

@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@angular/core';
 import { Telescope } from 'telescopejs';
 import { AppState } from '../app.state';
-import { todosLens, loadTodos } from './todos-ops';
+import { todosLens, loadTodos, addTodo } from './todos-ops';
 import { TodoState, Todo } from './todo.state';
 import { of } from 'rxjs';
 
@@ -20,6 +20,11 @@ export class TodoService {
       loadTodos(this.streamContract, [new Todo('go to aroma'),new Todo('fix tires')] );
       this.loaded = true;
     }
+  }
+
+  add( title: string ){
+    //httpCall - on success
+    addTodo(this.streamContract, title);
   }
 
 }

@@ -30,4 +30,16 @@ describe('TodoService', () => {
     );
     service.load();
   });
+
+  it('should add new todos', () => {
+    const service: TodoService = TestBed.get(TodoService);
+    let i = 0;
+    service.state$.stream.subscribe(
+      x => {
+        expect(x.todos.length).toEqual(i);
+        i++;
+      }
+    );
+    service.add('order sugar');
+  });
 });
