@@ -9,7 +9,7 @@ export class TodoState {
 
     add(title: string): TodoState {
         let todos = [ {title } ];
-        return new TodoState( todos );
+        return new TodoState( [...this.todos, ...todos] );
     }
 }
 

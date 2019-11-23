@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TodoService } from './todos/todo.service';
 
 @Component({
@@ -6,7 +6,15 @@ import { TodoService } from './todos/todo.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'telescope-todo';
+  todos: any;
   constructor( private todoService : TodoService ) {}
+  ngOnInit() {
+    this.todos = this.todoService.state$.stream;
+    this.todos.subscribe(
+      x => console.log( x )
+    );
+    this.todoService.load();
+  }
 }

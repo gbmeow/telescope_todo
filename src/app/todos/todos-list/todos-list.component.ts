@@ -8,13 +8,17 @@ import { TodoService } from '../todo.service';
   templateUrl: './todos-list.component.html',
   styleUrls: ['./todos-list.component.scss']
 })
-export class TodosListComponent {
+export class TodosListComponent implements OnInit {
 
   @Input() list: Array<Todo>;
-  @Input() serivce: TodoService;
+  @Input() service: TodoService;
   newTodo: string = '';
 
+  ngOnInit() {
+    console.log( this.list );
+  }
+
   add() {
-    this.serivce.add(this.newTodo);
+    this.service.add(this.newTodo);
   }
 }

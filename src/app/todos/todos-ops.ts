@@ -26,7 +26,8 @@ telescope.evolve(
 export const loadTodos = (telescope: Telescope<AppState>, todos: Array<Todo>): void =>
 telescope.evolve(
     (state) => {
-        state.todos = new TodoState([...state.todos.todos, ...todos]);
-        return state;
+        let todostate =  new TodoState([...state.todos.todos, ...todos]);
+        let s = new AppState(todostate, state.people);
+        return s;
     }
 );
