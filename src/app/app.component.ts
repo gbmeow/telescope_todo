@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TodoService } from './todos/todo.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'telescope-todo';
+  constructor( private todoService : TodoService ) {}
 }
