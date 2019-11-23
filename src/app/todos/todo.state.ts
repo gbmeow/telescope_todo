@@ -14,5 +14,5 @@ export class TodoState {
 }
 
 export class Todo {
-    title: string;
+    constructor( public title: string = ''){}
 }

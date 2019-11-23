@@ -17,7 +17,6 @@ describe('Todo Operations', () => {
     magnified.stream.subscribe(
         x => {
             expect(x.todos.length).toEqual(i);
-            console.log( x.todos );
             i++;
         }
     );
