@@ -4,6 +4,6 @@ export class TodoState {
     todos: Array<Todo>;
 }
 
-class Todo {
+export class Todo {
     title: string;
 }

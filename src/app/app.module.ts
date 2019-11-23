@@ -6,14 +6,18 @@ import { AppComponent } from './app.component';
 import { Telescope } from 'telescopejs';
 import { TodoService } from './todos/todo.service';
 import { AppState } from './app.state';
+import { TodosListComponent } from './todos/todos-list/todos-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodosListComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     TodoService,

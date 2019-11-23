@@ -1,0 +1,10 @@
+<div>
+    <label for="title">What do you need to do?</label>
+    <input type="text" id="title" [(ngModel)]="newTodo">
+    <button (click)="add()">Add</button>
+</div>
+
+      
+<div *ngFor="let l of list">
+{{l | json}}
+</div>
