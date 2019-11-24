@@ -8,7 +8,7 @@ import { TodoService } from '../todo.service';
   templateUrl: './todos-list.component.html',
   styleUrls: ['./todos-list.component.scss']
 })
-export class TodosListComponent implements OnInit {
+export class TodosListComponent {
 
   @Input() list: Array<Todo>;
   @Input() service: TodoService;
