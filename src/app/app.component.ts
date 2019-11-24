@@ -12,6 +12,11 @@ export class AppComponent implements OnInit {
   constructor( private todoService : TodoService ) {}
   ngOnInit() {
     this.todos = this.todoService.state$.stream;
+
+    //TODO: this is temp - while I am looking at async pipe
+    this.todos.subscribe(
+      x => x
+    );
     this.todoService.load();
   }
 }
