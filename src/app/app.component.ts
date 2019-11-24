@@ -12,9 +12,6 @@ export class AppComponent implements OnInit {
   constructor( private todoService : TodoService ) {}
   ngOnInit() {
     this.todos = this.todoService.state$.stream;
-    this.todos.subscribe(
-      x => console.log( x )
-    );
     this.todoService.load();
   }
 }

@@ -14,10 +14,6 @@ export class TodosListComponent implements OnInit {
   @Input() service: TodoService;
   newTodo: string = '';
 
-  ngOnInit() {
-    console.log( this.list );
-  }
-
   add() {
     this.service.add(this.newTodo);
   }
